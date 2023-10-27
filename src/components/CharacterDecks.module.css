@@ -1,0 +1,26 @@
+/* .box_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap:10px;
+  max-width: 100%; 
+  margin: 0 auto; 
+  padding: 10px; 
+  box-sizing: border-box;
+} */
+
+.box_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns with equal width */
+  grid-template-rows: repeat(5, 1fr); /* 5 rows with equal height */
+  gap: 10px; /* Adjust the gap as needed */
+  max-width: 100%; /* Limit the container width to the viewport width */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 10px; /* Add some padding to prevent the divs from sticking to the edges */
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows with equal height */
+  }
+}

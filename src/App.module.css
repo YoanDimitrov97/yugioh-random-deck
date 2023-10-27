@@ -1,0 +1,66 @@
+.nav_header {
+    width:100vw;
+    display:flex;
+    justify-content: space-between;
+}
+
+.nav_header div {
+    width:50%;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    position:relative;
+    box-shadow:0px 0px 4px #000;
+}
+
+.nav_header div h2 {
+    z-index:2;
+    position:absolute;
+    color:#fff;
+    font:20px Helvetica;
+    text-shadow: 5px 5px 30px #000;
+}
+
+.nav_header div:first-child {
+    background:purple;
+}
+
+.nav_header div:last-child {
+    background:red;
+}
+
+.nav_header div .background_wrap {
+    width:100%;
+    height:100%;
+    opacity:0.4;
+    z-index:1;
+}
+
+.nav_header div:first-child .background_wrap{
+    background-image:url('https://w0.peakpx.com/wallpaper/343/908/HD-wallpaper-yu-gi-oh-yu-gi-oh-duel-links.jpg');
+    background-position: 50% 36%;
+}
+
+.nav_header div:last-child .background_wrap {
+    background-image:url('https://e0.pxfuel.com/wallpapers/206/343/desktop-wallpaper-juudai-yuuki-jaden-yuki-mobile-anime-board.jpg');
+    background-position: 50% 28%;
+}
+
+.nav_header div .background_wrap:hover {
+    opacity:0.5;
+}
+
+main {
+    background:#333;
+    height:calc(100vh - 80px);
+    overflow: scroll;
+    -ms-overflow-style: none; /* Hide scrollbar on Internet Explorer */
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+
+    /* Hide the scrollbar on modern browsers */
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
