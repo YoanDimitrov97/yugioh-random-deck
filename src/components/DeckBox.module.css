@@ -11,7 +11,7 @@
 
 .box {
   aspect-ratio: 1;
-  box-sizing: border-box;
+  box-sizing: content-box;
   position:relative;
 }
 
@@ -32,7 +32,7 @@
   display:flex;
   align-items:center;
   justify-content: center;
-  height:60px;
+  height:48px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size:20px;
   @media (max-width: 768px) {
@@ -48,7 +48,7 @@
 }
 
 .copied_to_clipboard_holder {
-  opacity:0.9;
+  opacity:0.8;
   background:#000;
   position:absolute;
   top:calc(50% - 20px);

@@ -1,15 +1,16 @@
 .box_container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 5 columns with equal width */
-  grid-template-rows: repeat(6, 1fr); /* 5 rows with equal height */
+  grid-template-columns: repeat(9, 1fr); /* 5 columns with equal width */
+  grid-template-rows: repeat(9, 1fr); /* 5 rows with equal height */
   gap: 8px; /* Adjust the gap as needed */
-  max-width: 100%; /* Limit the container width to the viewport width */
-  margin: 0 auto; /* Center the container horizontally */
+  max-width: calc(100% - 36px); /* Limit the container width to the viewport width */
+  align-self:center; /* Center the container horizontally */
   padding: 8px; /* Add some padding to prevent the divs from sticking to the edges */
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-    grid-template-rows: repeat(3, 1fr); /* 3 rows with equal height */
+    max-width: calc(100% - 16px);
+    grid-template-columns: repeat(4, 1fr); /* 3 columns with equal width */
+    grid-template-rows: repeat(4, 1fr); /* 3 rows with equal height */
   }
 }
