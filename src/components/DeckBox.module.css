@@ -36,7 +36,7 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size:20px;
   @media (max-width: 768px) {
-    height:32px;
+    height:30px;
     opacity:0.9;
     font-size:14px;
   }
@@ -45,4 +45,20 @@
 .deck_name p {
   color:aliceblue;
   text-align:center;
+}
+
+.copied_to_clipboard_holder {
+  opacity:0.9;
+  background:#000;
+  position:absolute;
+  top:calc(50% - 20px);
+  width:100%;
+}
+
+.copied_to_clipboard {
+  color:gold;
+  
+  text-align:center;
+  display:block;
+  
 }

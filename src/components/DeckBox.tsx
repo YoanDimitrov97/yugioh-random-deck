@@ -16,6 +16,7 @@ export interface CardImage {
 }
 export default function DeckBox(props: IDeckBoxProps) {
   const [aceMonster, setAceMonster] = useState<string>()
+  const [isCopied, setIsCopied] = useState<boolean>(false)
   const getCharacterAceMonster = async () => {
     try {
       const res = await fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php?name=' + props.ace_monster);
@@ -40,8 +41,12 @@ export default function DeckBox(props: IDeckBoxProps) {
     return () => {
     }
   }, [])
-
+  //on click copy ygopro2 code to clipboard
   const copyToClipboard = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false)
+    }, 3000);
     navigator.clipboard.writeText(props.ygopro2_code);
   }; 
   return (
@@ -52,6 +57,12 @@ export default function DeckBox(props: IDeckBoxProps) {
         : (<img className={`${DeckBoxCSS.background_wrap} `} src={aceMonster} />)
         }
         <div className={`${DeckBoxCSS.deck_name}`}><p>{props.character_name.toUpperCase()}</p></div>
+        {isCopied && (
+          <div className={`${DeckBoxCSS.copied_to_clipboard_holder}`}>
+            <h2 className={`${DeckBoxCSS.copied_to_clipboard}`}>COPIED!</h2>
+          </div>
+        )}
+        
       </div>
     </>
   );

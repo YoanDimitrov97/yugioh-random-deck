@@ -40,7 +40,7 @@ export default function CharacterDecks() {
   return (
     <div className={CharacterDecksCSS.box_container}>
       {loading ? (
-        <p>Loading...</p>
+        <p style={{color:"white", textAlign:"center"}}>Loading...</p>
       ) : (
         sheetDB?.map((deck, index) => (
           <DeckBox

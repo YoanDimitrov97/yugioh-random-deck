@@ -20,7 +20,7 @@ function App() {
         </div>
       </header>
       <main>
-        {showRandomDeckComponent && <h1>Hello</h1>}
+        {showRandomDeckComponent && <h1 style={{color:"white", textAlign:"center"}}>RANDOM DECK SECTION IS IN DEVELOPMENT!!!</h1>}
         {showCharacterDecksComponent && <CharacterDeck />}
       </main>
     </>
