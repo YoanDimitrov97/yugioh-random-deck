@@ -40,11 +40,8 @@ export default function DeckBox(props: IDeckBoxProps) {
     return () => {
     }
   }, [])
-  console.log(aceMonster);
 
   const copyToClipboard = () => {
-    console.log("copying");
-    
     navigator.clipboard.writeText(props.ygopro2_code);
   }; 
   return (
