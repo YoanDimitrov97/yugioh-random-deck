@@ -1,7 +1,7 @@
 .box_container {
   display: grid;
-  grid-template-columns: repeat(9, 1fr); /* 5 columns with equal width */
-  grid-template-rows: repeat(9, 1fr); /* 5 rows with equal height */
+  grid-template-columns: repeat(10, 1fr); /* 5 columns with equal width */
+  grid-template-rows: repeat(10, 1fr); /* 5 rows with equal height */
   gap: 8px; /* Adjust the gap as needed */
   max-width: calc(100% - 36px); /* Limit the container width to the viewport width */
   align-self:center; /* Center the container horizontally */
