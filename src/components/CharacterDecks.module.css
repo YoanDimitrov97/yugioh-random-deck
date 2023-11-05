@@ -9,6 +9,8 @@
   box-sizing: border-box;
 
   @media (max-width: 768px) {
+    gap: 6px;
+    padding: 6px;
     max-width: calc(100% - 16px);
     grid-template-columns: repeat(4, 1fr); /* 3 columns with equal width */
     grid-template-rows: repeat(4, 1fr); /* 3 rows with equal height */
