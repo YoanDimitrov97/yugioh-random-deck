@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export interface ICardProps {
   name: string;
@@ -11,7 +11,8 @@ export interface ICardProps {
 
 export default function App() {
   const [allCards, setAllCards] = useState<ICardProps[]>();
-
+  console.log(allCards);
+  
   const getAllCards = async () => {
     try {
       const res = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php");
