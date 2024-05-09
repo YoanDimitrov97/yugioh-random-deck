@@ -41,13 +41,13 @@ export default function DeckBox(props: IDeckBoxProps) {
     return () => {
     }
   }, [])
-  //on click copy ygopro2 code to clipboard
+  //on click copy ygoomega code to clipboard
   const copyToClipboard = () => {
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false)
     }, 3000);
-    navigator.clipboard.writeText(props.ygopro2_code);
+    navigator.clipboard.writeText(props.ygoomega_code);
   }; 
   return (
     <>

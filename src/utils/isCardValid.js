@@ -1,0 +1,1 @@
+import { bannedCardArchetypes, bannedCardArchetypesInDesc } from "../assets/card_archetypes";

@@ -1,18 +1,59 @@
+.era_label{
+  height:32px;
+  display: flex;
+  align-items: center;
+  cursor:pointer;
+  margin-top:8px;
+  &.era_label_dm {
+    background:purple;
+  }
+  &.era_label_gx {
+    background:darkred;
+  }
+  p {
+    padding-left:10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#fff;
+  }
+}
+
 .box_container {
   display: grid;
-  grid-template-columns: repeat(10, 1fr); /* 5 columns with equal width */
-  grid-template-rows: repeat(10, 1fr); /* 5 rows with equal height */
+  grid-template-columns: repeat(14, 1fr); /* 5 columns with equal width */
+  grid-template-rows: repeat(4, 1fr); /* 5 rows with equal height */
   gap: 8px; /* Adjust the gap as needed */
-  max-width: calc(100% - 36px); /* Limit the container width to the viewport width */
+  max-width: calc(100% - (14 * 8px / 2)); /* Limit the container width to the viewport width */
   align-self:center; /* Center the container horizontally */
   padding: 8px; /* Add some padding to prevent the divs from sticking to the edges */
   box-sizing: border-box;
 
+  @media (max-width: 1480px) {
+    grid-template-columns: repeat(12, 1fr); 
+    grid-template-rows: repeat(5, 1fr);
+    max-width: calc(100% - (12 * 8px / 2));  
+  }
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(10, 1fr); 
+    grid-template-rows: repeat(6, 1fr);
+    max-width: calc(100% - (10 * 8px / 2));  
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(8, 1fr);
+    max-width: calc(100% - (6 * 8px / 2));  
+  }
   @media (max-width: 768px) {
     gap: 6px;
     padding: 6px;
     max-width: calc(100% - 16px);
     grid-template-columns: repeat(4, 1fr); /* 3 columns with equal width */
     grid-template-rows: repeat(4, 1fr); /* 3 rows with equal height */
+  }
+}
+
+.dmContainer {
+  @media (max-width: 768px) { 
+    margin-bottom: 48px;
   }
 }

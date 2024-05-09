@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import AppCSS from './App.module.css'
 import CharacterDeck from './components/CharacterDecks';
+import RandomDeck from './components/RandomDeck'
 
 function App() {
   const [showRandomDeckComponent, setShowRandomDeckComponent] = useState<boolean>(true);
@@ -20,7 +21,7 @@ function App() {
         </div>
       </header>
       <main>
-        {showRandomDeckComponent && <h1 style={{color:"white", textAlign:"center"}}>RANDOM DECK SECTION IS IN DEVELOPMENT!!!</h1>}
+        {showRandomDeckComponent && <h1 style={{color:"white", textAlign:"center"}}><RandomDeck /></h1>}
         {showCharacterDecksComponent && <CharacterDeck />}
       </main>
     </>

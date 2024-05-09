@@ -21,8 +21,6 @@
     background: var(--custom-bg-color, blue);
     opacity:1;
 }
-
-
 .deck_name {
   width:100%;
   background:#000;
@@ -34,7 +32,7 @@
   justify-content: center;
   height:48px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size:20px;
+  font-size:16px;
   @media (max-width: 768px) {
     height:30px;
     opacity:0.9;
@@ -60,5 +58,5 @@
   
   text-align:center;
   display:block;
-  
+
 }
