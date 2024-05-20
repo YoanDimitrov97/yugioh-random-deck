@@ -1,31 +1,40 @@
-import { useState } from "react";
-
-export interface ICardProps {
-  name: string;
-  type: string;
-  desc: string;
-  race: string;
-  archetype: string;
-  card_image: string;
-}
+import { useEffect, useState } from "react";
+import { getAllCards, ICardProps } from "../utils/getAllCards.ts";
+import { bannedCardArchetypes, bannedCardArchetypesInDesc, extraDeckTypes } from "../assets/card_archetypes.ts";
 
 export default function App() {
   const [allCards, setAllCards] = useState<ICardProps[]>();
-  console.log(allCards);
-  
-  const getAllCards = async () => {
-    try {
-      const res = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php");
-      const data = await res.json();
-      setAllCards(data.data);
-    } catch (error) {console.log(error);
-    }
-  };
+  const [allMonsterCards, setAllMonsterCards] = useState<ICardProps[]>();
+  const [allSpellCards, setAllSpellCards] = useState<ICardProps[]>();
+  const [allTrapCards, setAllTrapCards] = useState<ICardProps[]>();
+  const [allExtraDeckCards, setAllExtraDeckCards] = useState<ICardProps[]>();
+  const cardRatio: string[] = ["Monster", "Monster", "Monster", "Monster", "Monster", "Spell", "Spell", "Spell", "Trap", "Trap"];
 
+  useEffect(() => {
+    getAllCards(setAllCards)
+
+    //setting all monsters
+    const allMonsters = allCards?.filter(card => !bannedCardArchetypes.includes(card.archetype) && !bannedCardArchetypesInDesc.includes(card.desc) && !extraDeckTypes.includes(card.frameType) && !["spell", "trap"].includes(card.frameType));
+    setAllMonsterCards(allMonsters);
+
+    //setting all spells
+    const allSpells = allCards?.filter(card => !bannedCardArchetypes.includes(card.archetype) && !bannedCardArchetypesInDesc.includes(card.desc) && !extraDeckTypes.includes(card.frameType) && ["Spell Card"].includes(card.type));
+    setAllSpellCards(allSpells);
+
+  }, [])
+
+  // allCards?.filter(card => console.log(card));
+
+
+
+
+
+  console.log(allMonsterCards);
+  console.log(allSpellCards);
+  // console.log(allCards)
   return (
     <div>
       THIS SECTION IS IN DEVELOPMENT!!
-      <button onClick={getAllCards}>AYO</button>
     </div>
   );
 }

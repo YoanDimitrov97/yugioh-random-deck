@@ -1,4 +1,4 @@
-export const bannedCardArchetypes = [
+export const bannedCardArchetypes: string[] = [
   "Infernoble",
   "Albaz",
   "Abyss Actor",
@@ -109,15 +109,24 @@ export const bannedCardArchetypes = [
   "Witchcrafter",
   "Yang Zing",
   "Yubel",
+  "Necrovalley",
+  "Plunder Patroll",
+  "Icejade",
+  "Blackwing",
+  "Thunder Dragon",
+  "Subterror",
+  "Sunvine",
+  "Reptilianne",
+  "Vendread",
 ];
 
-export const bannedCardArchetypesInDesc = [
+export const bannedCardArchetypesInDesc: string[] = [
   "Dark Magician",
   "Blue-Eyes",
   "Red-Eyes",
 ];
 
-export const extraDeckTypes = [
+export const extraDeckTypes: string[] = [
   "fusion",
   "synchro",
   "xyz",
