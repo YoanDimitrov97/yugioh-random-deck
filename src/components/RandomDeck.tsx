@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ICardProps } from "../utils/getAllCards.ts";
 import { bannedCardArchetypes, bannedCardArchetypesInDesc, extraDeckTypes } from "../assets/card_archetypes.ts";
+import { useQuery } from 'react-query';
 
 export default function App() {
   const [allCards, setAllCards] = useState<ICardProps[]>();
@@ -14,21 +15,34 @@ export default function App() {
   const cardRatio: string[] = ["Monster", "Monster", "Monster", "Monster", "Monster", "Spell", "Spell", "Spell", "Trap", "Trap"];
   
   
-  const getAllCards = async () => {
+  const fetchAllCards = async () => {
     try {
       const res = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php");
-      const data = await res.json();
-      const allFetchedCards: ICardProps[] = data.data.filter(card => !["skill", "token"].includes(card.frameType))
-      setAllCards(allFetchedCards);
-      filterCards(allFetchedCards)
+      return res.json();
+      // const allFetchedCards: ICardProps[] = data.data.filter(card => !["skill", "token"].includes(card.frameType))
+      // setAllCards(allFetchedCards);
+      // filterCards(allFetchedCards)
     } catch (error) {
       console.log(error);
     }
   }
 
-  useEffect(() => {
-    getAllCards();
-  }, [allCards])
+  const { data, status } = useQuery('myData', fetchAllCards);
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'error') {
+    return <div>Error fetching data</div>;
+  }
+
+  if(data)
+  setAllCards(data)
+  
+  // useEffect(() => {
+  //   getAllCards();
+  // }, [allCards])
 
 
   const filterCards = (allCards: ICardProps[] | undefined) => {
@@ -102,7 +116,6 @@ export default function App() {
   // })
   return (
     <>
-      <h1>BRO</h1>
     </>
   );
 }
