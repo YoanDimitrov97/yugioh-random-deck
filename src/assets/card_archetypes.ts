@@ -118,6 +118,7 @@ export const bannedCardArchetypes: string[] = [
   "Sunvine",
   "Reptilianne",
   "Vendread",
+  "Aesir",
 ];
 
 export const bannedCardArchetypesInDesc: string[] = [
